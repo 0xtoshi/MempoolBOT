@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "web3": "^1.6.0"
+  },
+  "name": "mempoolbot",
+  "version": "1.0.0",
+  "description": "PancakeSwap Mempool Boot",
+  "main": "index.ts",
+  "devDependencies": {},
+  "scripts": {
+    "test": "ts-node index.ts"
+  },
+  "keywords": [
+    "PancakeSwap",
+    "Mempool",
+    "Bot",
+    "Bot",
+    "PancakeSwapBot"
+  ],
+  "author": "Gilang Dandung",
+  "license": "MIT"
+}
