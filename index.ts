@@ -3,6 +3,7 @@ import swapToken from "./swap/swapToken";
 import swapBNB from "./swap/swapBNB";
 import SubmitTx from "./Web3Call/SendTX";
 import MainConfiguration from "./main";
+import getTx from "./Web3Call/getTX";
 
 let web3 = new Web3(MainConfiguration.WSS_ENDPOINT);
 let account = web3.eth.accounts.privateKeyToAccount(MainConfiguration.PRIVATE_KEY);
@@ -15,7 +16,7 @@ let account = web3.eth.accounts.privateKeyToAccount(MainConfiguration.PRIVATE_KE
  
       if(!error){ 
 
-         let txHash = await web3.eth.getTransaction(transactionHash);
+         let txHash = await getTx(transactionHash);
           let BindFrom = MainConfiguration.LIQUIDITY_PROVIDER_ADDR.toLowerCase();
           let BindTo = MainConfiguration.Router.toLowerCase();
 
@@ -23,6 +24,9 @@ let account = web3.eth.accounts.privateKeyToAccount(MainConfiguration.PRIVATE_KE
                 
               console.log('Probability Liquidity Was Added');
               console.log('Sending Same TX in Mempool!');
+
+              var gas = txHash.gas;
+              var gasLimit = txHash.gasPrice;
 
               if( MainConfiguration.BUYWITH == 'BUSD') {
                 
@@ -33,7 +37,7 @@ let account = web3.eth.accounts.privateKeyToAccount(MainConfiguration.PRIVATE_KE
                     MainConfiguration.TX_DEADLINE
                   ); 
                   
-                  await SubmitTx(TxSwap, "0");
+                  await SubmitTx(TxSwap, "0", gas, gasLimit);
                   
 
                 } else if ( MainConfiguration.BUYWITH == 'BNB' ){
@@ -45,7 +49,7 @@ let account = web3.eth.accounts.privateKeyToAccount(MainConfiguration.PRIVATE_KE
                     MainConfiguration.TX_DEADLINE
                   );
                   
-                  await SubmitTx(TxSwap, MainConfiguration.AMOUNT_BUY);
+                  await SubmitTx(TxSwap, MainConfiguration.AMOUNT_BUY, gas, gasLimit);
                   
 
                 }

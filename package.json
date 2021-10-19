@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "commander": "^8.2.0",
     "web3": "^1.6.0"
   },
   "name": "mempoolbot",
