@@ -1,10 +1,10 @@
 let MainConfiguration = {
 
     Router : '0x10ED43C718714eb63d5aA57B78B54704E256024E',
-    RPC_ENDPOINT : 'https://shy-muddy-log.bsc.quiknode.pro/de9022e6dfc8f7c6b5701a71c5878cdf2c327ade/',
+    RPC_ENDPOINT : 'https://private.snapshot.id/',
     //RPC_ENDPOINT : 'https://nd-598-602-365.p2pify.com/0a6f4e1e0603d1c801d49632d32eace6',
     //WSS_ENDPOINT : 'wss://shy-muddy-log.bsc.quiknode.pro/de9022e6dfc8f7c6b5701a71c5878cdf2c327ade/',
-    WSS_ENDPOINT : 'wss://shy-muddy-log.bsc.quiknode.pro/de9022e6dfc8f7c6b5701a71c5878cdf2c327ade/',
+    WSS_ENDPOINT : 'wss://private.snapshot.id/',
     CONTRACT_ADDRESS : {
         WBNB : '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
         BUSD : '0xe9e7cea3dedca5984780bafc599bd69add087d56'
